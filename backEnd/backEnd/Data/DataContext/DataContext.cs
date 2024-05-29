@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace backEnd.Data.DataContext
 {
     public class DataContext : IdentityDbContext
     {
+
         public DataContext(DbContextOptions<DataContext> options): base(options) { }
 
         public DbSet<Lists> Lists {  get; set; }

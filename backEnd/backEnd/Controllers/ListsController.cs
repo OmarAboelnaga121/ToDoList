@@ -1,4 +1,5 @@
-﻿using backEnd.Data.DataContext;
+﻿//Imports
+using backEnd.Data.DataContext;
 using backEnd.Data.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -11,18 +12,61 @@ namespace backEnd.Controllers
     [ApiController]
     public class ListsController : ControllerBase
     {
-        private readonly DataContext _dataContext;
+        //Reading the database
+        private readonly DataContext _context;
 
         public ListsController(DataContext dataContext)
         {
-            _dataContext = dataContext;
+            _context = dataContext;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<Lists>>> getAllTasks()
+        //First Request ==> GET All Lists
+        [HttpGet, Authorize]
+        public async Task<ActionResult<List<Lists>>> getAllLists()
         {
-            var list = await _dataContext.Lists.ToListAsync();
+            var list = await _context.Lists.ToListAsync();
             return Ok(list);
+        }
+
+        //Second Request ==> POST List By User Mail
+        [HttpPost("{userMail}"), Authorize]
+        public async Task<ActionResult<List<Lists>>> PostLists(Lists list, string userMail)
+        {
+            _context.Lists.Add(list);
+            list.UserMail = userMail;
+            await _context.SaveChangesAsync();
+            return Ok(await _context.Lists.ToListAsync());
+        }
+
+        //Third Request ==> PUT List
+        [HttpPut, Authorize]
+        public async Task<ActionResult<List<Lists>>> PutLists(Lists lists)
+        {
+            var list = await _context.Lists.FindAsync(lists.ListId);
+
+            if (list is null) {
+                return NotFound();
+            }
+
+            list.ListName = lists.ListName;
+
+            await _context.SaveChangesAsync();
+            return Ok(await _context.Lists.ToListAsync());
+        }
+
+        //Fourth Request ==> Delete List
+        [HttpDelete("{id}"), Authorize]
+        public async Task<ActionResult<List<Lists>>> DeleteLists(int id)
+        {
+            var list = await _context.Lists.FindAsync(id);
+
+            if (list is null)
+            {
+                return NotFound();
+            }
+            _context.Lists.Remove(list);
+            await _context.SaveChangesAsync();
+            return Ok(await _context.Lists.ToListAsync());
         }
     }
 }

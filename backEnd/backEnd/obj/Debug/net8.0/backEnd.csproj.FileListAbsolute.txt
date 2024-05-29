@@ -1,3 +1,11 @@
+D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.csproj.AssemblyReference.cache
+D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.GeneratedMSBuildEditorConfig.editorconfig
+D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.AssemblyInfoInputs.cache
+D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.AssemblyInfo.cs
+D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.csproj.CoreCompileInputs.cache
+D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.MvcApplicationPartsAssemblyInfo.cs
+D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.MvcApplicationPartsAssemblyInfo.cache
+D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.sourcelink.json
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\appsettings.Development.json
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\appsettings.json
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\backEnd.exe
@@ -8,7 +16,6 @@ D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\backEnd.pdb
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\Azure.Core.dll
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\Azure.Identity.dll
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\Humanizer.dll
-D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\IdentityModel.dll
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -120,14 +127,6 @@ D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\runtimes\win\lib\net6.
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\HTML Project\ToDoList\backEnd\backEnd\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.csproj.AssemblyReference.cache
-D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.GeneratedMSBuildEditorConfig.editorconfig
-D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.AssemblyInfoInputs.cache
-D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.AssemblyInfo.cs
-D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.csproj.CoreCompileInputs.cache
-D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.MvcApplicationPartsAssemblyInfo.cs
-D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.MvcApplicationPartsAssemblyInfo.cache
-D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\backEnd.sourcelink.json
 D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\staticwebassets.build.json
 D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\staticwebassets.development.json
 D:\HTML Project\ToDoList\backEnd\backEnd\obj\Debug\net8.0\staticwebassets\msbuild.backEnd.Microsoft.AspNetCore.StaticWebAssets.props
