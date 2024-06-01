@@ -1,0 +1,63 @@
+.container{
+    height: 65vh;
+    margin-bottom: 50px;
+    .headerContent{
+        height: 45%;
+        width: 100%;
+        background: url(../../assets/images/backGroundHome.png);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 30px;
+        h3{
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .contentContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        width: 100%;
+        .content{
+            display: flex;
+            justify-content: center;
+            gap: 15%;
+            width: 90%;
+            margin-left: 8%;
+            flex-wrap: wrap;
+          
+            // Common Styles
+            .seacureContainer, .easyToUseContainer, .organizeContainer{
+            width: 300px;
+            flex: 1; 
+                i{
+                    font-size: 100px;
+                    color: var(--secondry-color);
+                }
+                p{
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+// For Tablets
+@media screen and (max-width: 573px) {
+    .headerContent{
+        font-size: 20px !important;
+    }
+}
+// For Mobiles
+@media screen and (max-width: 577px) {
+    .seacureContainer, .easyToUseContainer, .organizeContainer{
+        width: 600px !important;
+
+        p{
+            width: 350px !important;
+        }
+    }
+}

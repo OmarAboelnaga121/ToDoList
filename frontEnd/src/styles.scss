@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/styles/variables.component.scss";
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    list-style-type: none;
+}
+a{
+    color: #fff;
+}
+.button{
+    width: max-content;
+    padding: 3px 10px;
+    background-color: var(--secondry-color);
+    border: 0;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 17px;
+}
