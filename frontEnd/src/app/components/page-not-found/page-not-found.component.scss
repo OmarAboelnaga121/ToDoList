@@ -1,0 +1,11 @@
+.contanier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 78vh;
+    flex-direction: column;
+    img{
+        width: 150px;
+        height: auto;
+    }
+}

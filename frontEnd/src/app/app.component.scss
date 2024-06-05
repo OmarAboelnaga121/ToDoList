@@ -1,5 +1,20 @@
 .mainContainer{
     display: flex;
     flex-direction: column;
-    gap: 30vh;
+    min-height: 100vh;
+    height: 100%;
+    
+    div:nth-child(1){
+        flex-grow: 1;
+    }
+    .footer {
+        flex-shrink: 0;
+        margin-top: auto;
+        position: absolute;
+        bottom: 0;
+    }
+    .navForDashboard{
+        display: none;
+    }
 }
+

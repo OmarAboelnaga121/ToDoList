@@ -6,9 +6,15 @@
     font-family: "Poppins", sans-serif;
     list-style-type: none;
 }
+::selection{
+    background-color: var(--primary-color);
+    color: #fff;
+}
 a{
     color: #fff;
 }
+
+// Button Styles
 .button{
     width: max-content;
     padding: 3px 10px;
@@ -17,4 +23,19 @@ a{
     color: #fff;
     border-radius: 5px;
     font-size: 17px;
+    cursor: pointer;
+}
+
+// Input Styles
+.input{
+    border: 1px #888 solid;
+    padding: 5px;
+    border-radius: 15px;
+    width: 100%;
+    outline: 0;
+    font-size: 15px;
+}
+
+.input:focus{
+    border: 1px solid #4aa0d1;
 }

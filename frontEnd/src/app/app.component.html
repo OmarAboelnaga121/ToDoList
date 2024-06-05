@@ -1,8 +1,10 @@
 <div class="mainContainer">
     <div>
-        <app-header></app-header>
+        <app-header [class.navForDashboard]="navControl"></app-header>
 
         <router-outlet />
     </div>
-    <!-- <app-footer></app-footer> -->
+    <!-- <div class="footer">
+        <app-footer></app-footer>
+    </div> -->
 </div>

@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+
+    // Image Styles
+    .imgContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 86vh;
+        flex: 1.5;
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    // Inputs Styles
+    .inputsContanier{
+        margin-left: 7%;
+        height: 40vh;
+        width: 100%;
+        flex: 1;
+
+        .inputContainer{
+            margin-top: 10px;
+        }
+
+        .button{
+            margin-top: 10%;
+            width: 100%;
+        }
+    }
+
+}
