@@ -11,8 +11,10 @@ import { RouterModule } from '@angular/router'
 })
 export class HeaderComponent {
 
+  // The menu for mobile
   menuValue:boolean = false
 
+  // fun for opening the menu
   openMenu(){
     this.menuValue = !this.menuValue
   }

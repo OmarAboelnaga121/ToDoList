@@ -13,29 +13,44 @@ export class LoginComponent {
 
   constructor(private userHttp : ServicesService, private route : Router, private cookies : CookieService){}
 
+  // Defining the user
   user = {
     email: '',
     password: ''
   }
 
+  // Checking about the cookies and the route
   ngOnInit(): void {
-    if(this.cookies.get('name') == `${this.user.email}`){
+    if(this.cookies.get('name') ==  "Login"){
       this.route.navigate(['/dashboard'])
     }
   }
     
+  // Login for user
   loginUser(){
     this.user = {
       email: (document.getElementById('mail') as HTMLInputElement).value,
       password: (document.getElementById('password') as HTMLInputElement).value
     }
 
-    this.userHttp.loginUser(this.user);
+    this.userHttp.loginUser(this.user).subscribe(response => {
+      if (response) {
+  
+        console.log(response);
+        
+        this.cookies.set('name', 'Login', {
+          expires: 7,
+          path: '/' 
+        });
+
+        this.cookies.set('userEmail', this.user.email, {
+          expires: 7,
+          path: '/' 
+        });
     
-    // this.cookies.set(`${this.user.email}`, 'Login')
-
-    this.cookies.set('name',`${this.user.email}`);
-
-    this.route.navigate(['/dashboard'])
+    
+        this.route.navigate(['/dashboard'])
+      }
+    })
   }
 }

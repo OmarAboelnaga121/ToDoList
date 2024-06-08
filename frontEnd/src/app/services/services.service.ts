@@ -23,9 +23,10 @@ export class ServicesService {
 
   // The post req for login
   loginUser(userData : User){
-    const url = "https://localhost:7226/login?useCookies=true"
+    const url = "https://localhost:7226/login"
 
     return this.httpclient.post<User>(url, userData)
+    
   }
 
   // get req for user's Lists
@@ -36,7 +37,7 @@ export class ServicesService {
   }
 
   //get req for list's Tasks
-  listTasks(listId : string){
+  listTasks(listId : number){
     const url = `https://localhost:7226/api/User/listId/${listId}`
 
     return this.httpclient.get<any>(url)

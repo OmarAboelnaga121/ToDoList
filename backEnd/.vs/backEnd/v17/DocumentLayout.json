@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\HTML Project\\ToDoList\\backEnd\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FAE72095-DF7A-464E-8B16-1C641877287B}|backEnd\\backEnd.csproj|d:\\html project\\todolist\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAE72095-DF7A-464E-8B16-1C641877287B}|backEnd\\backEnd.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAE72095-DF7A-464E-8B16-1C641877287B}|backEnd\\backEnd.csproj|d:\\html project\\todolist\\backend\\backend\\migrations\\20240606193636_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAE72095-DF7A-464E-8B16-1C641877287B}|backEnd\\backEnd.csproj|solutionrelative:backend\\migrations\\20240606193636_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAE72095-DF7A-464E-8B16-1C641877287B}|backEnd\\backEnd.csproj|d:\\html project\\todolist\\backend\\backend\\data\\models\\todoitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAE72095-DF7A-464E-8B16-1C641877287B}|backEnd\\backEnd.csproj|solutionrelative:backend\\data\\models\\todoitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAE72095-DF7A-464E-8B16-1C641877287B}|backEnd\\backEnd.csproj|d:\\html project\\todolist\\backend\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAE72095-DF7A-464E-8B16-1C641877287B}|backEnd\\backEnd.csproj|solutionrelative:backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAE72095-DF7A-464E-8B16-1C641877287B}|backEnd\\backEnd.csproj|d:\\html project\\todolist\\backend\\backend\\controllers\\listscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAE72095-DF7A-464E-8B16-1C641877287B}|backEnd\\backEnd.csproj|solutionrelative:backend\\controllers\\listscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +30,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\HTML Project\\ToDoList\\backEnd\\backEnd\\Program.cs",
+              "RelativeDocumentMoniker": "backEnd\\Program.cs",
+              "ToolTip": "D:\\HTML Project\\ToDoList\\backEnd\\backEnd\\Program.cs",
+              "RelativeToolTip": "backEnd\\Program.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T19:40:26.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20240606193636_Data.cs",
+              "DocumentMoniker": "D:\\HTML Project\\ToDoList\\backEnd\\backEnd\\Migrations\\20240606193636_Data.cs",
+              "RelativeDocumentMoniker": "backEnd\\Migrations\\20240606193636_Data.cs",
+              "ToolTip": "D:\\HTML Project\\ToDoList\\backEnd\\backEnd\\Migrations\\20240606193636_Data.cs",
+              "RelativeToolTip": "backEnd\\Migrations\\20240606193636_Data.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T19:36:37.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ToDOItems.cs",
+              "DocumentMoniker": "D:\\HTML Project\\ToDoList\\backEnd\\backEnd\\Data\\Models\\ToDOItems.cs",
+              "RelativeDocumentMoniker": "backEnd\\Data\\Models\\ToDOItems.cs",
+              "ToolTip": "D:\\HTML Project\\ToDoList\\backEnd\\backEnd\\Data\\Models\\ToDOItems.cs",
+              "RelativeToolTip": "backEnd\\Data\\Models\\ToDOItems.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T19:32:21.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\HTML Project\\ToDoList\\backEnd\\backEnd\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "backEnd\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\HTML Project\\ToDoList\\backEnd\\backEnd\\Controllers\\UserController.cs",
+              "RelativeToolTip": "backEnd\\Controllers\\UserController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAA5wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T19:31:09.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ListsController.cs",
+              "DocumentMoniker": "D:\\HTML Project\\ToDoList\\backEnd\\backEnd\\Controllers\\ListsController.cs",
+              "RelativeDocumentMoniker": "backEnd\\Controllers\\ListsController.cs",
+              "ToolTip": "D:\\HTML Project\\ToDoList\\backEnd\\backEnd\\Controllers\\ListsController.cs",
+              "RelativeToolTip": "backEnd\\Controllers\\ListsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T19:31:03.749Z"
             }
           ]
         }

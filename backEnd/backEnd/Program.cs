@@ -21,7 +21,7 @@ builder.Services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStore
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("s", policy =>
+    options.AddPolicy("http://localhost:4200", policy =>
     {
         policy.AllowAnyOrigin()
         .AllowAnyMethod()

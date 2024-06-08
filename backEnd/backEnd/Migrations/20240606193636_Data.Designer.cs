@@ -12,7 +12,7 @@ using backEnd.Data.DataContext;
 namespace backEnd.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240529185557_Data")]
+    [Migration("20240606193636_Data")]
     partial class Data
     {
         /// <inheritdoc />
@@ -255,16 +255,18 @@ namespace backEnd.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ItemId"));
 
+                    b.Property<bool>("Checked")
+                        .HasColumnType("bit");
+
                     b.Property<string>("ItemName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ListId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Time")
+                    b.Property<int>("ListId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ItemId");
 

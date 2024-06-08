@@ -1,5 +1,31 @@
-<section>
-    <div class="lists"></div>
-    <div class="nav"></div>
-    <div class="contentTasks"></div>
+<section class="container">
+    <div class="listsContainer">
+        <input placeholder="Search ..." type="text"/>
+        <button class="button">Add List</button>
+        <div class="lists">
+            @for (list of lists; track list) {
+                    <button class="button" (click)="getListTasks(list.listId)" [routerLink]="'/dashboard?id=' + list.listId">{{list.listName}}</button>
+            }
+        </div>
+        <button class="button settings" [routerLink]="urlSettings"><i class="bi bi-gear icon"></i> Settings</button>
+
+    </div>
+    <div class="secContainer">
+        <div class="nav">
+            <h2>Omar Wael</h2>
+        </div>
+        <div class="contentTasks">
+            @if(url == "/dashboard"){
+                    <img alt="Dashboard" src="../../../../assets/images/dashboardImage.png">
+                    <h3>There is no choosed list. Please choose a list</h3>
+            }@if(url == "/dashboard?page=settings"){
+                <h2>Settings</h2>
+            }
+            <!-- @if(url == '/dashboard?id=' + list.listId){
+                <h2>dashboard</h2>
+            } -->
+
+        </div>
+    </div>
+
 </section>

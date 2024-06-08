@@ -21,7 +21,7 @@ namespace backEnd.Controllers
         }
 
         //First Request ==> GET All Lists of the one user
-        [HttpGet("userMail/{userMail}"), Authorize]
+        [HttpGet("userMail/{userMail}")]
         public async Task<ActionResult<List<Lists>>> GetAllListsForUser(string userMail)
         {
             var lists = await _context.Lists.Where(list => list.UserMail == userMail).ToListAsync();
@@ -29,7 +29,7 @@ namespace backEnd.Controllers
         }
 
         //Second Request ==> GET All Tasks Of one list
-        [HttpGet("listId/{ListId}"), Authorize]
+        [HttpGet("listId/{ListId}")]
         public async Task<ActionResult<List<ToDOItems>>> GetAllTasksForList(int ListId)
         {
             var Tasks = await _context.ToDOItems.Where(ToDOItem => ToDOItem.ListId == ListId).ToListAsync();

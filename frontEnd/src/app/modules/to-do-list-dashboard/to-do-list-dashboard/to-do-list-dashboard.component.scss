@@ -1,0 +1,65 @@
+.container{
+    height: 100%;
+    min-height: 89vh;
+    display: flex;
+    .listsContainer{
+        width: 20%;
+        min-height: 90vh;
+        height: 100%;
+        border-right: 1px solid #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .lists{
+            display: flex;
+            flex-direction: column;
+            margin: 70% 0;
+            width: 100%;
+            align-items: center;
+        }
+        .button{
+            width: 90%;
+            margin: 5px 0;
+            position: relative;
+
+            .icon{
+                position: absolute;
+                top: 3px;
+                left: 6px;
+                animation: iconSettings 2s;
+                transform: rotate(20deg);
+            }
+            @keyframes iconSettings {
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(540deg);
+
+                }
+            }
+        }
+    }
+    .secContainer{
+        width: 100%;
+        
+        .nav{
+            border-bottom: solid 1px #111;
+        }
+
+        .contentTasks{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 94%;
+
+            img{
+                width: 250px;
+                height: auto;
+            }
+        }
+    }
+
+}
