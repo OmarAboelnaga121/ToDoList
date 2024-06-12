@@ -1,31 +1,70 @@
 <section class="container">
+    <!-- List container on the left -->
     <div class="listsContainer">
-        <input placeholder="Search ..." type="text"/>
-        <button class="button">Add List</button>
+        <!-- The search bar and the button -->
+        <div class="controlContainer">
+            <input placeholder="Search ..." [(ngModel)]="searchValue" type="text" class="input"/>
+            <button class="button" (click)="openPopUpList()">Add List</button>
+        </div>
+
+        <!-- The buttons for lists -->
         <div class="lists">
-            @for (list of lists; track list) {
-                    <button class="button" (click)="getListTasks(list.listId)" [routerLink]="'/dashboard?id=' + list.listId">{{list.listName}}</button>
-            }
+            <button *ngFor="let list of lists | searchPipe : searchValue" class="button" (click)="getListTasks()" [routerLink]="'/dashboard?id=' + list.listId">{{list.listName}}</button>
         </div>
-        <button class="button settings" [routerLink]="urlSettings"><i class="bi bi-gear icon"></i> Settings</button>
 
+        <!-- Settings Button -->
+        <button class="button settings" [routerLink]="urlSettings"><i class="pi pi-cog icon"></i> Settings</button>
     </div>
+
+    <!-- The container which contain the tasks of the list and the nav -->
     <div class="secContainer">
+        <!-- The nav -->
         <div class="nav">
-            <h2>Omar Wael</h2>
+            <h2 >Omar Wael</h2>
         </div>
-        <div class="contentTasks">
-            @if(url == "/dashboard"){
-                    <img alt="Dashboard" src="../../../../assets/images/dashboardImage.png">
-                    <h3>There is no choosed list. Please choose a list</h3>
-            }@if(url == "/dashboard?page=settings"){
-                <h2>Settings</h2>
-            }
-            <!-- @if(url == '/dashboard?id=' + list.listId){
-                <h2>dashboard</h2>
-            } -->
 
+        <!-- The container which contain the tasks -->
+        <div class="contentTasks">
+            <!-- Conditions -->
+                <!-- First if the url  = /dashboard -->
+                @if(url == "/dashboard"){
+                        <img alt="Dashboard" src="../../../../assets/images/dashboardImage.png">
+                        <h3>There is no choosed list. Please choose a list</h3>
+                }
+
+                <!-- Second if the url = /dashboard?page=settings -->
+                @if(url == "/dashboard?page=settings"){
+                    <h2>Settings</h2>
+                }
+
+                <!-- Third condtion of the ids -->
+                @if(url != "/dashboard?page=settings" && url != "/dashboard" && tasks.length  > 0){
+                    @for(task of tasks; track task){
+                        
+                        <div class="tasksContainer">
+                            <div class="taskContainer">
+                                <h3>{{task.itemName}}</h3>
+                                <p-checkbox class="checkbox" [binary]="true" [(ngModel)]="task.checked" placeholder="Check"/>
+                            </div>
+
+                            <button class="button" (click)="openPopUpTask()">Create Task</button>
+                        </div>
+
+                    }
+                }
+
+                <!-- For the lists which doesn't have tasks -->
+                @if(tasks.length  === 0 && url != "/dashboard" && url != "/dashboard?page=settings"){
+                    <div class="noTaskContainer">
+                        <img src="../../../../assets/images/sorryForTasks.png" alt="Sorry Image">
+                        <h2>There is No Tasks</h2>
+                        <button class="button" (click)="openPopUpTask()">Create Task</button>
+                    </div>
+                    
+                }
         </div>
     </div>
+
+    <app-pop-up (submitDataOfList)="ListData($event)" (submitDataOfTask)="TaskData($event)" [listId]="listId"></app-pop-up>
 
 </section>

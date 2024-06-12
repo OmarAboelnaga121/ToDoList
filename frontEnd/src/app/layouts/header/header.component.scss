@@ -35,7 +35,11 @@ header{
             .listLabel {
                 display: block !important;
                 z-index: 999;
-                font-size: 30px;
+                display: flex !important;
+                align-items: center !important;
+                i{
+                    font-size: 23px;
+                }
             }
             .logo{
                 h2{
@@ -69,4 +73,7 @@ header{
             top: 60px ;
             transition: 0.5s all ;
           }
+}
+.navForDashboard{
+    display: none;
 }

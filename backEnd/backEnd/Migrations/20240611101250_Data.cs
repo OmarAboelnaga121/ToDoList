@@ -58,7 +58,7 @@ namespace backEnd.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserMail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ListName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Time = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Time = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -73,7 +73,7 @@ namespace backEnd.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ListId = table.Column<int>(type: "int", nullable: false),
                     ItemName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Time = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Time = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Checked = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>

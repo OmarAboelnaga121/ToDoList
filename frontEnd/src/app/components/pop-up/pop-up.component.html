@@ -1,0 +1,32 @@
+<p-dialog [(visible)]="visable" header="Create New List" closable="false" [style]="{ width: '25rem', height: '35%' }">
+       @if(listPopUp === true){
+              <div class="errorMeassageContainer">
+                     <p [class.errorMeassage]="errorMessageBoolean" class="errorMeassage">{{errorMessage}}</p>
+              </div>
+              <div class="inputContainer">
+                     <label >Enter The List Name</label>
+                     <input id="ListName" class="input" type="text" placeholder="List Name" />
+              </div>
+
+              <div class="buttonContainer">
+                     <button class="button" (click)="sendDataOfList()">Create</button>
+                     <button class="button cancel" (click)="cancelPopUp()">Cancel</button>
+              </div>
+       }
+
+       @if(taskPopUP  === true){
+              <div class="errorMeassageContainer">
+                     <p [class.errorMeassage]="errorMessageBoolean" class="errorMeassage">{{errorMessage}}</p>
+              </div>
+              <div class="inputContainer">
+                     <label >Enter The Task Name</label>
+                     <input id="TaskName" class="input" type="text" placeholder="Task Name" />
+              </div>
+              <div class="buttonContainer">
+                     <button class="button" (click)="sendDataOfTask()">Create</button>
+                     <button class="button cancel" (click)="cancelPopUp()">Cancel</button>
+              </div>
+
+       }
+
+</p-dialog>

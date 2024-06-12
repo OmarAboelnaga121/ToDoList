@@ -28,23 +28,28 @@ namespace backEnd.Controllers
             return Ok(list);
         }
 
-        //Second Request ==> POST List By User Mail
-        [HttpPost("{userMail}"), Authorize]
-        public async Task<ActionResult<List<Lists>>> PostLists(Lists list, string userMail)
+        //Second Request ==> POST List 
+        [HttpPost]
+        public async Task<ActionResult<List<Lists>>> PostLists(Lists list)
         {
+            list.Time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             _context.Lists.Add(list);
-            list.UserMail = userMail;
             await _context.SaveChangesAsync();
             return Ok(await _context.Lists.ToListAsync());
         }
 
         //Third Request ==> PUT List
-        [HttpPut, Authorize]
+        [HttpPut]
         public async Task<ActionResult<List<Lists>>> PutLists(Lists lists)
         {
             var list = await _context.Lists.FindAsync(lists.ListId);
 
             if (list is null) {
+                return NotFound();
+            }
+
+            if(list.UserMail != lists.UserMail)
+            {
                 return NotFound();
             }
 

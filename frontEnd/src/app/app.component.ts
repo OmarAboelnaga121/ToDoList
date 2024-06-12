@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -13,19 +12,32 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  constructor(private route : Router, private cookies : CookieService){}
 
-  navControl:boolean = false
+  cookieMessage : string = "This Website Uses Cookies For Better Exprince."
+  cookieDismiss : string = "Accept"
+  cookieLinkText : string = "What is Cookies ?"
 
-  ngOnInit() : void{
-    if (this.route.url.startsWith('/dashboard')) {
-      console.log(this.route.url);
-      
-      this.navControl = true;
-    } else {
-      this.navControl = false;
-    }
+  ngOnInit(): void {
+    let cc = window as any;
+       cc.cookieconsent.initialise({
+         palette: {
+           popup: {
+             background: "#054E83"
+           },
+           button: {
+             background: "#0687B2",
+             text: "#fff"
+           }
+         },
+         theme: "",
+         content: {
+           message: this.cookieMessage,
+           dismiss: this.cookieDismiss,
+           link: this.cookieLinkText,
+           href: "/dataprivacy" 
+         }
+       });
+
   }
-
  }
 

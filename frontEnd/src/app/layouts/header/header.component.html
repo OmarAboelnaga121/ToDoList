@@ -1,9 +1,9 @@
-<header class="container">
+<header class="container" [class.navForDashboard]="navControl">
     <div class="content">
         <div class="logoContainer">
             <a routerLink="/" class="logo"><h2>Omar Wael</h2></a>
         </div>
-        <div class="listLabel" (click)="openMenu()"><i class="bi bi-list-ul"></i></div>
+        <div class="listLabel" (click)="openMenu()"><i class="pi pi-bars"></i></div>
 
         <!-- For Desktops -->
         <div class="linksContainer" [class.mobile_menu]="menuValue">

@@ -12,7 +12,7 @@ using backEnd.Data.DataContext;
 namespace backEnd.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240606193636_Data")]
+    [Migration("20240611101250_Data")]
     partial class Data
     {
         /// <inheritdoc />
@@ -235,8 +235,9 @@ namespace backEnd.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Time")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserMail")
                         .IsRequired()
@@ -265,8 +266,9 @@ namespace backEnd.Migrations
                     b.Property<int>("ListId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Time")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ItemId");
 
