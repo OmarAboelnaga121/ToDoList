@@ -47,6 +47,11 @@ export class LoginComponent {
           expires: 7,
           path: '/' 
         });
+
+        this.cookies.set('darkMode', 'false', {
+          expires: 7,
+          path: '/' 
+        });
     
     
         this.route.navigate(['/dashboard'])

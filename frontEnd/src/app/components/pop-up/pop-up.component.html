@@ -26,7 +26,20 @@
                      <button class="button" (click)="sendDataOfTask()">Create</button>
                      <button class="button cancel" (click)="cancelPopUp()">Cancel</button>
               </div>
+       }
 
+       @if(listPopUpUpdate  === true){
+              <div class="errorMeassageContainer">
+                     <p [class.errorMeassage]="errorMessageBoolean" class="errorMeassage">{{errorMessage}}</p>
+              </div>
+              <div class="inputContainer">
+                     <label >Enter The New List Name</label>
+                     <input id="listUpdateName" value="{{list.listName}}" class="input" type="text" placeholder="Task Name" />
+              </div>
+              <div class="buttonContainer">
+                     <button class="button" (click)="sendDataOfListUpdate(list)">Create</button>
+                     <button class="button cancel" (click)="cancelPopUp()">Cancel</button>
+              </div>
        }
 
 </p-dialog>

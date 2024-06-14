@@ -55,10 +55,10 @@ export class ServicesService {
     }
 
     // Put req for lists
-    updateList(listId : number){
+    updateList(data : any){
       const url = `https://localhost:7226/api/Lists`
 
-      return this.httpclient.put<any>(url, listId)
+      return this.httpclient.put<any>(url, data)
     }
 
     // Delete req for lists
@@ -77,10 +77,10 @@ export class ServicesService {
     }
 
     // Put req for tasks
-    updateTask(listId : number){
+    updateTask(task : any){
       const url = `https://localhost:7226/api/ToDoItems`
 
-      return this.httpclient.put<any>(url, listId)
+      return this.httpclient.put<any>(url, task)
     }
 
     // Delete req for tasks

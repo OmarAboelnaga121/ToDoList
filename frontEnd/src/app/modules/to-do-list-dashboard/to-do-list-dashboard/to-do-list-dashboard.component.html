@@ -3,13 +3,26 @@
     <div class="listsContainer">
         <!-- The search bar and the button -->
         <div class="controlContainer">
+            <!-- <button><i class="pi pi-bars"></i></button> -->
+            <!-- The nav -->
+            <div class="nav">
+                <h2>Omar Wael</h2>
+            </div>
             <input placeholder="Search ..." [(ngModel)]="searchValue" type="text" class="input"/>
             <button class="button" (click)="openPopUpList()">Add List</button>
         </div>
 
         <!-- The buttons for lists -->
         <div class="lists">
-            <button *ngFor="let list of lists | searchPipe : searchValue" class="button" (click)="getListTasks()" [routerLink]="'/dashboard?id=' + list.listId">{{list.listName}}</button>
+            <div *ngFor="let list of lists | searchPipe : searchValue" class="listContainer" >
+                <div (click)="getListTasks()" [routerLink]="'/dashboard?id=' + list.listId" class="listNameContainer">
+                    <h3>{{list.listName}}</h3>
+                </div>
+                <div class="controllContainer">
+                    <button (click)="updateList(list)"><i class="pi pi-pencil"></i></button>
+                    <button (click)="deleteList(list.listId)"><i class="pi pi-trash"></i></button>
+                </div>
+            </div>
         </div>
 
         <!-- Settings Button -->
@@ -18,10 +31,6 @@
 
     <!-- The container which contain the tasks of the list and the nav -->
     <div class="secContainer">
-        <!-- The nav -->
-        <div class="nav">
-            <h2 >Omar Wael</h2>
-        </div>
 
         <!-- The container which contain the tasks -->
         <div class="contentTasks">
@@ -34,23 +43,34 @@
 
                 <!-- Second if the url = /dashboard?page=settings -->
                 @if(url == "/dashboard?page=settings"){
-                    <h2>Settings</h2>
+                    <div class="settingsContainer">
+                        <div class="darkMode">
+                            <h3>Dark Mode</h3>
+                            <p-inputSwitch class="switch" [(ngModel)]="darkModeCheck" (onChange)="darkMode()"/>
+                        </div>
+                        <div class="logOut">
+                            <button class="button" (click)="logOut()">Log Out</button>
+                        </div>
+                    </div>
                 }
 
                 <!-- Third condtion of the ids -->
                 @if(url != "/dashboard?page=settings" && url != "/dashboard" && tasks.length  > 0){
-                    @for(task of tasks; track task){
-                        
                         <div class="tasksContainer">
+                            @for(task of tasks; track task){
                             <div class="taskContainer">
                                 <h3>{{task.itemName}}</h3>
-                                <p-checkbox class="checkbox" [binary]="true" [(ngModel)]="task.checked" placeholder="Check"/>
-                            </div>
+                                <div class="checkbox">
+                                    <p-checkbox [binary]="true" (onChange)="taskCheck(task)" [(ngModel)]="task.checked" placeholder="Check"/>
+                                    <button (click)="deleteTask(task.itemId)"><i class="pi pi-trash"></i></button>
+                                </div>
 
+                            </div>
+                            }
                             <button class="button" (click)="openPopUpTask()">Create Task</button>
                         </div>
 
-                    }
+                    
                 }
 
                 <!-- For the lists which doesn't have tasks -->
@@ -65,6 +85,6 @@
         </div>
     </div>
 
-    <app-pop-up (submitDataOfList)="ListData($event)" (submitDataOfTask)="TaskData($event)" [listId]="listId"></app-pop-up>
+    <app-pop-up [taskData]="" (submitDataOfListUpdate)="updateListData($event)" (submitDataOfList)="ListData($event)" (submitDataOfTask)="TaskData($event)" [listId]="listId"></app-pop-up>
 
 </section>

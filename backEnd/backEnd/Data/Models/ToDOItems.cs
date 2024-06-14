@@ -8,6 +8,6 @@ namespace backEnd.Data.Models
         public int ListId { get; set; }
         public string ItemName { get; set; } = string.Empty;
         public string Time { get; set; } = string.Empty;
-        public Boolean Checked { get; set; } = false;
+        public Boolean Checked { get; set; }
     }
 }

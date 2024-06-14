@@ -3,7 +3,6 @@
     flex-direction: column;
     min-height: 100vh;
     height: 100%;
-    
     div:nth-child(1){
         flex-grow: 1;
     }
@@ -15,3 +14,7 @@
     }
 }
 
+.darkMode{
+    background: #111;
+    color: #fff;
+}

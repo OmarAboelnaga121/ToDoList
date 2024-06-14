@@ -33,5 +33,18 @@
             width: 100%;
         }
     }
+}
 
+@media screen and (max-width: 500px) {
+    .container{
+        flex-direction: column;
+        padding-top: 10px;
+        .inputsContanier{
+            margin-left: 0;
+            width: 80% !important;
+            .inputsContanier{
+            }
+        }
+    }
+    
 }

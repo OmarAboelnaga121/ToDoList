@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,27 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
+  constructor(private cookies : CookieService, private route : Router){}
+
   cookieMessage : string = "This Website Uses Cookies For Better Exprince."
   cookieDismiss : string = "Accept"
   cookieLinkText : string = "What is Cookies ?"
 
+  darkMode : boolean = false
+  
+
   ngOnInit(): void {
+
+    if(this.cookies.get('name') ==  "Login"){
+      this.route.navigate(['/dashboard'])
+    }
+
+    if(this.cookies.get('darkMode') === 'true'){
+      this.darkMode = true
+    }else{
+      this.darkMode = false
+    }
+    
     let cc = window as any;
        cc.cookieconsent.initialise({
          palette: {
@@ -34,10 +51,8 @@ export class AppComponent {
            message: this.cookieMessage,
            dismiss: this.cookieDismiss,
            link: this.cookieLinkText,
-           href: "/dataprivacy" 
          }
        });
-
   }
  }
 

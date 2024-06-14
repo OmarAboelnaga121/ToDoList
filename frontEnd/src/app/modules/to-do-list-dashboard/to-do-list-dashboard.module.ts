@@ -6,7 +6,7 @@ import { ToDoListDashboardComponent } from './to-do-list-dashboard/to-do-list-da
 import { FormsModule } from '@angular/forms';
 import { PopUpComponent } from '../../components/pop-up/pop-up.component';
 import { SearchPipePipe } from '../../pipes/search-pipe.pipe';
-
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 @NgModule({
   declarations: [ToDoListDashboardComponent],
@@ -16,7 +16,8 @@ import { SearchPipePipe } from '../../pipes/search-pipe.pipe';
     FormsModule,
     CheckboxModule,
     PopUpComponent,
-    SearchPipePipe
+    SearchPipePipe,
+    InputSwitchModule
   ]
 })
 export class ToDoListDashboardModule { }

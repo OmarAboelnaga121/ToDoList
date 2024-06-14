@@ -16,8 +16,10 @@ export class PopUpComponent {
 
   // the Outputs and Inputs
   @Output() submitDataOfList = new EventEmitter<any>();
+  @Output() submitDataOfListUpdate = new EventEmitter<any>();
   @Output() submitDataOfTask = new EventEmitter<any>();
   @Input() listId : number = 0
+  @Input() taskData : any = []
 
   // The list and tasks handler for fetch
   list : any = {}
@@ -30,6 +32,7 @@ export class PopUpComponent {
   errorMessageBoolean : boolean = false
   listPopUp : boolean = false
   taskPopUP : boolean = false
+  listPopUpUpdate : boolean = false
   visable : boolean = false
 
   // function ==> To Close or cancel the pop up
@@ -80,6 +83,45 @@ export class PopUpComponent {
     return true
   }
 
+  // Function ==> to take and send the data to to-do-list-dashboard
+  sendDataOfListUpdate(list : any){
+    // Defining the list for a backend
+    this.list = {
+      listId: list.listId,
+      userMail: list.userMail,
+      listName: (document.getElementById('listUpdateName') as HTMLInputElement).value,
+      time: Date()
+    }
+
+    // Validation
+    if(this.errorMessage == ""){
+      this.errorMessageBoolean = true
+    }else{
+      this.errorMessageBoolean = false
+    }
+
+    if(this.list.listName == ""){
+      this.errorMessage = "Please enter a list name"
+      return false
+    }
+    console.log(this.list);
+    
+    // Emit the data to the to-do-list-dashboard 
+    this.submitDataOfListUpdate.emit({
+      listId: this.list.listId,
+      userMail: this.list.userMail,
+      listName: this.list.listName,
+      time: this.list.time
+    })
+
+    // Closing the pop up and errors and clear the list
+    this.errorMessageBoolean = false;
+    this.visable = false;
+    (document.getElementById('ListName') as HTMLInputElement).value = ""
+    return true
+  }
+
+
   // Function ==> to take and send the data of task to to-do-list-dashboard
   sendDataOfTask(){
     // Defining the list for a backend
@@ -115,4 +157,5 @@ export class PopUpComponent {
     (document.getElementById('TaskName') as HTMLInputElement).value = ""
     return true
   }
+  
 }

@@ -55,6 +55,7 @@ namespace backEnd.Controllers
             }
 
             ToDOItemCheck.ItemName = ToDOItem.ItemName;
+            ToDOItemCheck.Checked = ToDOItem.Checked;
 
             await _context.SaveChangesAsync();
             return Ok(await _context.ToDOItems.ToListAsync());

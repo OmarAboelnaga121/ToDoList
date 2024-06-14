@@ -60,7 +60,7 @@ namespace backEnd.Controllers
         }
 
         //Fourth Request ==> Delete List
-        [HttpDelete("{id}"), Authorize]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<List<Lists>>> DeleteLists(int id)
         {
             var list = await _context.Lists.FindAsync(id);
